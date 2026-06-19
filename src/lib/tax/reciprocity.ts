@@ -1,6 +1,6 @@
 export const RECIPROCITY_MAP: Record<string, string[]> = {
-  IL: ['IA', 'KY', 'MI', 'WI'],
-  IN: ['KY', 'MI', 'OH', 'PA', 'WI'],
+  IL: ['IN', 'IA', 'KY', 'MI', 'WI'],
+  IN: ['IL', 'KY', 'MI', 'OH', 'PA', 'WI'],
   IA: ['IL'],
   KY: ['IL', 'IN', 'MI', 'OH', 'VA', 'WI', 'WV'],
   MD: ['DC', 'PA', 'VA', 'WV'],
@@ -9,7 +9,7 @@ export const RECIPROCITY_MAP: Record<string, string[]> = {
   MT: ['ND'],
   NJ: ['PA'],
   ND: ['MN', 'MT'],
-  OH: ['IN', 'KY', 'MI', 'PA', 'WI'],
+  OH: ['IN', 'KY', 'MI', 'PA', 'WV'],
   PA: ['IN', 'MD', 'NJ', 'OH', 'VA', 'WV'],
   VA: ['DC', 'KY', 'MD', 'PA', 'WV'],
   WI: ['IL', 'IN', 'KY', 'MI'],

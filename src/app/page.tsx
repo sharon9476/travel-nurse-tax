@@ -60,6 +60,41 @@ const TOOLS = [
       </svg>
     ),
   },
+  {
+    href: '/calculator/w2-vs-1099',
+    title: 'W2 vs 1099 Calculator',
+    description:
+      'Side-by-side after-tax comparison of W2 and 1099 contracts. Accounts for self-employment tax, the SE deduction, stipends, and your actual break-even rate.',
+    cta: 'Compare contracts',
+    icon: (
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="3" y="8" width="17" height="28" rx="2.5" fill="#2EBFA5" fillOpacity="0.12" stroke="#2EBFA5" strokeWidth="1.5" />
+        <line x1="7" y1="16" x2="16" y2="16" stroke="#2EBFA5" strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="7" y1="21" x2="16" y2="21" stroke="#2EBFA5" strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="7" y1="26" x2="13" y2="26" stroke="#2EBFA5" strokeWidth="1.5" strokeLinecap="round" />
+        <rect x="24" y="8" width="17" height="28" rx="2.5" fill="#F0A500" fillOpacity="0.1" stroke="#F0A500" strokeWidth="1.5" />
+        <line x1="28" y1="16" x2="37" y2="16" stroke="#F0A500" strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="28" y1="21" x2="37" y2="21" stroke="#F0A500" strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="28" y1="26" x2="34" y2="26" stroke="#F0A500" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M20 22h4" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    href: '/states',
+    title: 'State Tax Guide',
+    description:
+      'Income tax rates, reciprocity agreements, and per diem context for all 50 states. Know your tax situation before accepting an assignment.',
+    cta: 'Browse states',
+    icon: (
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M6 34L12 10l10 8 8-14 8 30H6z" fill="#2EBFA5" fillOpacity="0.1" stroke="#2EBFA5" strokeWidth="1.5" strokeLinejoin="round" />
+        <circle cx="30" cy="18" r="5" fill="#0F1E2E" stroke="#F0A500" strokeWidth="1.5" />
+        <line x1="30" y1="13" x2="30" y2="23" stroke="#F0A500" strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="25" y1="18" x2="35" y2="18" stroke="#F0A500" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
 ]
 
 const FAQ_ITEMS = [

@@ -28,7 +28,6 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
     name: 'Arizona',
     hasIncomeTax: true,
     flatRate: 0.025,
-    notes: 'Flat 2.5% since 2023',
   },
   AR: {
     name: 'Arkansas',
@@ -106,8 +105,7 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
   GA: {
     name: 'Georgia',
     hasIncomeTax: true,
-    flatRate: 0.055,
-    notes: 'Transitioning to flat 5.5% in 2024, dropping to 5.39% in 2025',
+    flatRate: 0.0519,
   },
   HI: {
     name: 'Hawaii',
@@ -130,7 +128,7 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
   ID: {
     name: 'Idaho',
     hasIncomeTax: true,
-    flatRate: 0.058,
+    flatRate: 0.053,
   },
   IL: {
     name: 'Illinois',
@@ -140,16 +138,12 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
   IN: {
     name: 'Indiana',
     hasIncomeTax: true,
-    flatRate: 0.0305,
+    flatRate: 0.0295,
   },
   IA: {
     name: 'Iowa',
     hasIncomeTax: true,
-    brackets: [
-      { rate: 0.044, min: 0,       max: 6_210 },
-      { rate: 0.0482,min: 6_210,   max: 31_050 },
-      { rate: 0.057, min: 31_050,  max: Infinity },
-    ],
+    flatRate: 0.038,
   },
   KS: {
     name: 'Kansas',
@@ -163,16 +157,12 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
   KY: {
     name: 'Kentucky',
     hasIncomeTax: true,
-    flatRate: 0.04,
+    flatRate: 0.035,
   },
   LA: {
     name: 'Louisiana',
     hasIncomeTax: true,
-    brackets: [
-      { rate: 0.025, min: 0,       max: 12_500 },
-      { rate: 0.035, min: 12_500,  max: 50_000 },
-      { rate: 0.0425,min: 50_000,  max: Infinity },
-    ],
+    flatRate: 0.03,
   },
   ME: {
     name: 'Maine',
@@ -223,22 +213,21 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
     hasIncomeTax: true,
     brackets: [
       { rate: 0.00, min: 0,      max: 10_000 },
-      { rate: 0.05, min: 10_000, max: Infinity },
+      { rate: 0.04, min: 10_000, max: Infinity },
     ],
   },
   MO: {
     name: 'Missouri',
     hasIncomeTax: true,
     brackets: [
-      { rate: 0.015, min: 0,       max: 1_121 },
-      { rate: 0.02,  min: 1_121,   max: 2_242 },
-      { rate: 0.025, min: 2_242,   max: 3_363 },
-      { rate: 0.03,  min: 3_363,   max: 4_484 },
-      { rate: 0.035, min: 4_484,   max: 5_605 },
-      { rate: 0.04,  min: 5_605,   max: 6_726 },
-      { rate: 0.045, min: 6_726,   max: 7_847 },
-      { rate: 0.05,  min: 7_847,   max: 8_968 },
-      { rate: 0.054, min: 8_968,   max: Infinity },
+      { rate: 0.00,  min: 0,      max: 1_348 },
+      { rate: 0.02,  min: 1_348,  max: 2_696 },
+      { rate: 0.025, min: 2_696,  max: 4_044 },
+      { rate: 0.03,  min: 4_044,  max: 5_392 },
+      { rate: 0.035, min: 5_392,  max: 6_740 },
+      { rate: 0.04,  min: 6_740,  max: 8_088 },
+      { rate: 0.045, min: 8_088,  max: 9_436 },
+      { rate: 0.047, min: 9_436,  max: Infinity },
     ],
   },
   MT: {
@@ -310,7 +299,7 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
   NC: {
     name: 'North Carolina',
     hasIncomeTax: true,
-    flatRate: 0.045,
+    flatRate: 0.0399,
   },
   ND: {
     name: 'North Dakota',
@@ -324,23 +313,18 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
     name: 'Ohio',
     hasIncomeTax: true,
     brackets: [
-      { rate: 0.00,   min: 0,       max: 26_050 },
-      { rate: 0.02765,min: 26_050,  max: 46_100 },
-      { rate: 0.03226,min: 46_100,  max: 92_150 },
-      { rate: 0.03688,min: 92_150,  max: 115_300 },
-      { rate: 0.0399, min: 115_300, max: Infinity },
+      { rate: 0.00,   min: 0,      max: 26_050 },
+      { rate: 0.0275, min: 26_050, max: Infinity },
     ],
   },
   OK: {
     name: 'Oklahoma',
     hasIncomeTax: true,
     brackets: [
-      { rate: 0.0025,min: 0,       max: 1_000 },
-      { rate: 0.0075,min: 1_000,   max: 2_500 },
-      { rate: 0.0175,min: 2_500,   max: 3_750 },
-      { rate: 0.0275,min: 3_750,   max: 4_900 },
-      { rate: 0.0375,min: 4_900,   max: 7_200 },
-      { rate: 0.0475,min: 7_200,   max: Infinity },
+      { rate: 0.00,  min: 0,     max: 3_750 },
+      { rate: 0.025, min: 3_750, max: 4_900 },
+      { rate: 0.035, min: 4_900, max: 7_200 },
+      { rate: 0.045, min: 7_200, max: Infinity },
     ],
   },
   OR: {
@@ -392,7 +376,7 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
   UT: {
     name: 'Utah',
     hasIncomeTax: true,
-    flatRate: 0.0465,
+    flatRate: 0.0445,
   },
   VT: {
     name: 'Vermont',
@@ -423,11 +407,11 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
     name: 'West Virginia',
     hasIncomeTax: true,
     brackets: [
-      { rate: 0.0236,min: 0,       max: 10_000 },
-      { rate: 0.0315,min: 10_000,  max: 25_000 },
-      { rate: 0.0354,min: 25_000,  max: 40_000 },
-      { rate: 0.0472,min: 40_000,  max: 60_000 },
-      { rate: 0.0512,min: 60_000,  max: Infinity },
+      { rate: 0.0211, min: 0,      max: 10_000 },
+      { rate: 0.0281, min: 10_000, max: 25_000 },
+      { rate: 0.0316, min: 25_000, max: 40_000 },
+      { rate: 0.0422, min: 40_000, max: 60_000 },
+      { rate: 0.0458, min: 60_000, max: Infinity },
     ],
   },
   WI: {
@@ -466,3 +450,22 @@ export const US_STATES = Object.entries(STATE_TAX_RATES).map(([code, config]) =>
   code,
   name: config.name,
 })).sort((a, b) => a.name.localeCompare(b.name))
+
+export function getTopMarginalRate(config: StateTaxConfig): number {
+  if (!config.hasIncomeTax) return 0
+  if (config.flatRate !== undefined) return config.flatRate
+  if (config.brackets) {
+    return config.brackets[config.brackets.length - 1].rate
+  }
+  return 0
+}
+
+export function formatTaxRate(config: StateTaxConfig): string {
+  if (!config.hasIncomeTax) return 'No income tax'
+  if (config.flatRate !== undefined) return `${(config.flatRate * 100).toFixed(2).replace(/\.?0+$/, '')}% flat`
+  if (config.brackets) {
+    const top = config.brackets[config.brackets.length - 1].rate
+    return `Up to ${(top * 100).toFixed(2).replace(/\.?0+$/, '')}%`
+  }
+  return 'N/A'
+}
