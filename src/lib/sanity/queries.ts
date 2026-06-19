@@ -13,7 +13,7 @@ export interface Post extends PostSummary {
   body: PortableTextBlock[]
   seoTitle?: string
   seoDescription?: string
-  relatedTool?: 'contract-analyzer' | 'tax-home-quiz' | 'per-diem-checker'
+  relatedTool?: 'contract-analyzer' | 'tax-home-quiz' | 'per-diem-checker' | 'w2-vs-1099'
 }
 
 export async function getAllPosts(): Promise<PostSummary[]> {

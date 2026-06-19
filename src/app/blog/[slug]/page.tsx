@@ -41,6 +41,11 @@ const RELATED_TOOL_CONFIG = {
     href: '/calculator/per-diem',
     description: 'See how your agency\'s stipends compare to FY2025 GSA rates for your assignment city.',
   },
+  'w2-vs-1099': {
+    label: 'Compare W2 vs. 1099 take-home',
+    href: '/calculator/w2-vs-1099',
+    description: 'Enter your contract details and see the real after-tax difference between W2 and 1099 pay.',
+  },
 } as const
 
 export default async function BlogPostPage({ params }: PageProps) {
