@@ -4,6 +4,7 @@ import './globals.css'
 import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteFooter />
         </TooltipProvider>
       </body>
+      <GoogleAnalytics gaId="G-NX0YQKWD2T" />
     </html>
   )
 }
