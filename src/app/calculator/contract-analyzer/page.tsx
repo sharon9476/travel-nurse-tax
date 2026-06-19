@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { ContractInput, ContractResult } from '@/types/tax'
 import { calculateContractNetPay } from '@/lib/tax/contractCalculator'
 import ContractForm from '@/components/contract-analyzer/ContractForm'
@@ -11,14 +11,15 @@ export default function ContractAnalyzerPage() {
   const [result, setResult] = useState<ContractResult | null>(null)
   const [lastInput, setLastInput] = useState<ContractInput | null>(null)
 
+  useEffect(() => {
+    if (result) {
+      document.getElementById('contract-results')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [result])
+
   function handleSubmit(input: ContractInput) {
     setLastInput(input)
     setResult(calculateContractNetPay(input))
-    // Scroll to results on mobile
-    if (result) {
-      const el = document.getElementById('contract-results')
-      el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
   }
 
   return (

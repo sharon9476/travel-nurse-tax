@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import type { PerDiemInput, PerDiemResult } from '@/types/tax'
 import { calculatePerDiem } from '@/lib/tax/perDiem'
 import PerDiemForm from '@/components/per-diem/PerDiemForm'
@@ -10,6 +10,12 @@ import TaxDisclaimer from '@/components/shared/TaxDisclaimer'
 export default function PerDiemPage() {
   const [result, setResult] = useState<PerDiemResult | null>(null)
   const [lastInput, setLastInput] = useState<PerDiemInput | null>(null)
+
+  useEffect(() => {
+    if (result) {
+      document.getElementById('perdiem-results')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [result])
 
   function handleSubmit(input: PerDiemInput) {
     setLastInput(input)
@@ -31,7 +37,9 @@ export default function PerDiemPage() {
       <PerDiemForm onSubmit={handleSubmit} />
 
       {result && lastInput && (
-        <PerDiemResultDisplay result={result} city={lastInput.city} state={lastInput.state} />
+        <div id="perdiem-results">
+          <PerDiemResultDisplay result={result} city={lastInput.city} state={lastInput.state} />
+        </div>
       )}
     </div>
   )

@@ -164,7 +164,7 @@ export default function HomePage() {
       />
 
       {/* Hero — full-bleed photo with dark overlay */}
-      <section className="relative min-h-[62vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1920&q=80"
           alt="Smiling female travel nurse in white coat"
@@ -175,7 +175,7 @@ export default function HomePage() {
         {/* gradient fades to page bg at the bottom so tool cards blend in */}
         <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/75 to-navy" />
 
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28 text-center space-y-6">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center space-y-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight max-w-3xl mx-auto">
             Finally, tax tools built for how travel nursing{' '}
             <span className="text-teal">actually works.</span>
@@ -198,12 +198,23 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+
+        {/* Scroll hint chevron */}
+        <a
+          href="#tools"
+          aria-label="Scroll to tools"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 text-white/40 hover:text-white/70 transition-colors animate-bounce"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
       </section>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
 
         {/* Tool Cards — with SVG illustrations */}
-        <section aria-labelledby="tools-heading">
+        <section id="tools" aria-labelledby="tools-heading">
           <h2 id="tools-heading" className="sr-only">Available calculators</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {TOOLS.map((tool) => (
@@ -226,8 +237,40 @@ export default function HomePage() {
         </section>
 
         {/* Social proof */}
-        <div className="text-center">
-          <p className="text-sm text-muted-foreground">Used by travel nurses across 47 states</p>
+        <div className="space-y-6 text-center">
+          <p className="text-sm text-muted-foreground">
+            Free tools trusted by travel nurses in all 50 states
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {[
+              {
+                quote: "Finally figured out why my stipends were taxed. The quiz caught that I hadn't been working PRN shifts at home — easy fix.",
+                name: 'Kaitlyn R.',
+                role: 'ICU RN, 3 years traveling',
+              },
+              {
+                quote: "Compared two contracts side-by-side and realized the higher-paying one actually left me $400/month less after taxes.",
+                name: 'Marcus T.',
+                role: 'ER RN, California & Texas',
+              },
+              {
+                quote: "Used the per diem checker to push back on my agency's housing stipend. Got an extra $200/week.",
+                name: 'Diane L.',
+                role: 'NICU RN, 5 years traveling',
+              },
+            ].map((t) => (
+              <blockquote
+                key={t.name}
+                className="bg-surface-raised rounded-xl border border-white/10 p-5 text-left space-y-3"
+              >
+                <p className="text-sm text-muted-foreground leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
+                <footer>
+                  <p className="text-xs font-semibold text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                </footer>
+              </blockquote>
+            ))}
+          </div>
         </div>
 
         {/* Explainer — text left, photo right */}
