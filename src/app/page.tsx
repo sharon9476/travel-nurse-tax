@@ -107,8 +107,9 @@ export default function HomePage() {
           src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=1920&q=80"
           alt="Healthcare professional with stethoscope"
           fill
-          className="object-cover object-top"
+          className="object-cover object-[center_30%]"
           priority
+          unoptimized
         />
         {/* gradient fades to page bg at the bottom so tool cards blend in */}
         <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/75 to-navy" />
@@ -209,6 +210,7 @@ export default function HomePage() {
                   alt="Travel nurse in scrubs with stethoscope"
                   fill
                   className="object-cover object-center"
+                  unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
               </div>
