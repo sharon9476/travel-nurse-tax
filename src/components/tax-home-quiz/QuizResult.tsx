@@ -43,9 +43,7 @@ export default function QuizResultDisplay({ result }: QuizResultProps) {
         </span>
         <h2 className="text-xl font-bold text-foreground">{result.headline}</h2>
         <p className="text-sm text-muted-foreground leading-relaxed">{result.explanation}</p>
-        <p className="text-xs text-muted-foreground">
-          Your score: <span className="data-mono text-foreground font-medium">{result.score}</span> out of 22
-        </p>
+
       </div>
 
       {/* Action Items */}
