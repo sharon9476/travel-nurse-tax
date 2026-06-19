@@ -7,6 +7,7 @@ export const revalidate = 3600
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Travel nurse tax guides, contract tips, and IRS rule breakdowns written for nurses, not accountants.',
+  robots: { index: false, follow: false },
 }
 
 export default async function BlogPage() {

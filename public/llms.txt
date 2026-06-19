@@ -1,0 +1,31 @@
+# TravelNurseTax
+
+> Free tax calculators built specifically for travel nurses. Calculate your real effective hourly rate, verify your tax home status, and check GSA per diem rates — in 60 seconds.
+
+## Tools
+
+- [Contract Analyzer](https://www.travelnursetax.app/calculator/contract-analyzer): Enter your taxable hourly rate, stipends, and states worked to calculate your real effective hourly rate after federal income tax, FICA, and multi-state taxes. Shows how the stipend split changes your take-home versus a staff nurse earning the same gross.
+- [Tax Home Quiz](https://www.travelnursetax.app/quiz/tax-home): Eight-question evaluation based on the IRS three-factor test for tax home validity. Determines whether your tax home can survive an audit (Strong / Moderate / At Risk / Invalid) and provides specific corrective actions.
+- [Per Diem Checker](https://www.travelnursetax.app/calculator/per-diem): Compare your agency's housing and M&IE stipends against FY2026 GSA rates for your assignment city. Identifies how much additional tax-free income you could negotiate.
+
+## Key Tax Facts for Travel Nurses
+
+Travel nurse stipends — housing and meals & incidental expenses (M&IE) — are tax-free only if you maintain a valid tax home per IRS Publication 463.
+
+The IRS three-factor test for tax home validity:
+1. You have regular work near your permanent home (PRN shifts, per diem work)
+2. You incur duplicate living expenses while on assignment
+3. You have not abandoned your home area (maintain residence, return between assignments)
+
+Nurses who meet all three factors have the strongest position. Those who meet only two factors are at moderate risk. Failing all three means the IRS considers you an "itinerant worker" and stipends become taxable wages.
+
+Multi-state filing: Travel nurses must generally file a non-resident return in each state where they earn wages, plus their home state return. Exceptions: reciprocity agreements between states, or states with no income tax (FL, TX, NV, WA, WY, SD, AK).
+
+Sources: IRS Publication 463, Revenue Ruling 73-529, IRC §162(a)(2).
+
+## About
+
+TravelNurseTax is a free tool for US travel nurses. No signup required. No data stored.
+
+- Website: https://www.travelnursetax.app
+- Canonical domain: https://www.travelnursetax.app

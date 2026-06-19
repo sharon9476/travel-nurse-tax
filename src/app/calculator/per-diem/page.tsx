@@ -21,7 +21,7 @@ export default function PerDiemPage() {
       <header className="space-y-2">
         <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Per Diem Checker</h1>
         <p className="text-muted-foreground text-sm leading-relaxed">
-          Compare your agency&apos;s housing and M&amp;IE stipends against FY2025 GSA rates for your assignment
+          Compare your agency&apos;s housing and M&amp;IE stipends against FY2026 GSA rates for your assignment
           city. Know exactly how much tax-free income you could be negotiating for.
         </p>
       </header>

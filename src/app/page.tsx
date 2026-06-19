@@ -48,7 +48,7 @@ const TOOLS = [
     href: '/calculator/per-diem',
     title: 'Per Diem Checker',
     description:
-      "Compare your agency's housing and M&IE stipends to FY2025 GSA rates. See exactly how much tax-free income you're leaving unclaimed.",
+      "Compare your agency's housing and M&IE stipends to FY2026 GSA rates. See exactly how much tax-free income you're leaving unclaimed.",
     cta: 'Check your per diem',
     icon: (
       <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
@@ -62,10 +62,7 @@ const TOOLS = [
   },
 ]
 
-const FAQ_SCHEMA = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
+const FAQ_ITEMS = [
     {
       '@type': 'Question',
       name: 'Are travel nurse stipends taxable?',
@@ -90,6 +87,36 @@ const FAQ_SCHEMA = {
         text: 'Generally, yes — travel nurses must file a non-resident tax return in each state where they earned income during the year, in addition to their home state return. However, there are exceptions: if your home state and work state have a reciprocity agreement, you only file in your home state. Additionally, states with no income tax (Florida, Texas, Nevada, Washington, etc.) require no return. A travel nurse who works in three different states in a year typically files three to four state returns.',
       },
     },
+  ]
+
+const PAGE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': 'https://www.travelnursetax.app/#website',
+      url: 'https://www.travelnursetax.app/',
+      name: 'TravelNurseTax',
+      description: 'Free tax calculators built specifically for travel nurses.',
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.travelnursetax.app/#organization',
+      url: 'https://www.travelnursetax.app/',
+      name: 'TravelNurseTax',
+    },
+    {
+      '@type': 'SoftwareApplication',
+      name: 'TravelNurseTax',
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'Any',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      url: 'https://www.travelnursetax.app/',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: FAQ_ITEMS,
+    },
   ],
 }
 
@@ -98,7 +125,7 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(PAGE_SCHEMA) }}
       />
 
       {/* Hero — full-bleed photo with dark overlay */}
@@ -109,7 +136,6 @@ export default function HomePage() {
           fill
           className="object-cover object-center"
           priority
-          unoptimized
         />
         {/* gradient fades to page bg at the bottom so tool cards blend in */}
         <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/75 to-navy" />
@@ -210,7 +236,6 @@ export default function HomePage() {
                   alt="Travel nurse in scrubs with stethoscope"
                   fill
                   className="object-cover object-center"
-                  unoptimized
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/50 via-transparent to-transparent" />
               </div>
@@ -231,7 +256,7 @@ export default function HomePage() {
             Common questions
           </h2>
           <div className="space-y-4">
-            {FAQ_SCHEMA.mainEntity.map((item) => (
+            {FAQ_ITEMS.map((item) => (
               <div
                 key={item.name}
                 className="bg-surface-raised rounded-lg border border-white/10 p-5 space-y-2"
