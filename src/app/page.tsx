@@ -104,10 +104,10 @@ export default function HomePage() {
       {/* Hero — full-bleed photo with dark overlay */}
       <section className="relative min-h-[62vh] flex items-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=1920&q=80"
-          alt="Healthcare professional with stethoscope"
+          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1920&q=80"
+          alt="Smiling female travel nurse in white coat"
           fill
-          className="object-cover object-[center_30%]"
+          className="object-cover object-center"
           priority
           unoptimized
         />
@@ -247,25 +247,7 @@ export default function HomePage() {
 
         {/* Photo attribution */}
         <p className="text-center text-xs text-muted-foreground/40">
-          Photos by{' '}
-          <a
-            href="https://unsplash.com/@jeshoots"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-muted-foreground transition-colors"
-          >
-            JESHOOTS.COM
-          </a>{' '}
-          and{' '}
-          <a
-            href="https://unsplash.com/@matteohernandez"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-muted-foreground transition-colors"
-          >
-            Mateo Hernandez Reyes
-          </a>{' '}
-          on{' '}
+          Photos via{' '}
           <a
             href="https://unsplash.com"
             target="_blank"
