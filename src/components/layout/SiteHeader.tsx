@@ -2,16 +2,24 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const NAV_LINKS = [
   { label: 'Contract Analyzer', href: '/calculator/contract-analyzer' },
   { label: 'Tax Home Quiz', href: '/quiz/tax-home' },
   { label: 'Per Diem Checker', href: '/calculator/per-diem' },
+  { label: 'W2 vs 1099', href: '/calculator/w2-vs-1099' },
+  { label: 'State Tax Guide', href: '/states' },
   { label: 'Blog', href: '/blog' },
 ]
 
 export default function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+
+  function isActive(href: string) {
+    return pathname === href || pathname.startsWith(href + '/')
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-navy border-b border-white/10">
@@ -30,7 +38,11 @@ export default function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-surface-raised rounded-md transition-colors"
+                className={`px-3 py-2 text-sm rounded-md transition-colors ${
+                  isActive(link.href)
+                    ? 'text-teal font-semibold border-b-2 border-teal rounded-none pb-[6px]'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-surface-raised'
+                }`}
               >
                 {link.label}
               </Link>
@@ -67,7 +79,11 @@ export default function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-surface-raised rounded-md transition-colors"
+                className={`block px-3 py-2.5 text-sm rounded-md transition-colors ${
+                  isActive(link.href)
+                    ? 'text-teal font-semibold bg-teal/10'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-surface-raised'
+                }`}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

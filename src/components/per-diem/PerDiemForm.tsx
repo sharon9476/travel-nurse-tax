@@ -79,7 +79,7 @@ export default function PerDiemForm({ onSubmit }: PerDiemFormProps) {
       {/* City */}
       <div className="space-y-1 relative">
         <label htmlFor="city" className="block text-sm font-medium text-foreground">
-          Assignment City
+          Assignment City <span className="text-destructive" aria-hidden="true">*</span>
         </label>
         <input
           ref={cityInputRef}
@@ -116,7 +116,7 @@ export default function PerDiemForm({ onSubmit }: PerDiemFormProps) {
       {/* State */}
       <div className="space-y-1">
         <label htmlFor="state" className="block text-sm font-medium text-foreground">
-          Assignment State
+          Assignment State <span className="text-destructive" aria-hidden="true">*</span>
         </label>
         <select
           id="state"
@@ -156,7 +156,7 @@ export default function PerDiemForm({ onSubmit }: PerDiemFormProps) {
         {/* Agency Housing */}
         <div className="space-y-1">
           <label htmlFor="agencyHousing" className="block text-sm font-medium text-foreground">
-            {housingLabel}
+            {housingLabel} <span className="text-destructive" aria-hidden="true">*</span>
           </label>
           <input
             id="agencyHousing"
@@ -174,7 +174,7 @@ export default function PerDiemForm({ onSubmit }: PerDiemFormProps) {
         {/* Agency M&IE */}
         <div className="space-y-1">
           <label htmlFor="agencyMeals" className="block text-sm font-medium text-foreground">
-            {mealsLabel}
+            {mealsLabel} <span className="text-destructive" aria-hidden="true">*</span>
           </label>
           <input
             id="agencyMeals"

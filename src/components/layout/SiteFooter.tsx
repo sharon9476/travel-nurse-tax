@@ -40,22 +40,34 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Company */}
           <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Resources</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Company</p>
             <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  About
+                </Link>
+              </li>
               <li>
                 <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/states" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  State Tax Guide
+                <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Contact
                 </Link>
               </li>
               <li>
-                <span className="text-sm text-muted-foreground/50 cursor-default">Privacy Policy</span>
+                <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Terms of Service
+                </Link>
               </li>
             </ul>
           </div>

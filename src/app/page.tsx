@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import FaqAccordion from '@/components/homepage/FaqAccordion'
 
 export const metadata: Metadata = {
   title: 'TravelNurseTax — Free Tax Calculators for Travel Nurses',
@@ -173,14 +174,14 @@ export default function HomePage() {
           priority
         />
         {/* gradient fades to page bg at the bottom so tool cards blend in */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/75 to-navy" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/80 to-navy" />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center space-y-6">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight max-w-3xl mx-auto">
             Finally, tax tools built for how travel nursing{' '}
             <span className="text-teal">actually works.</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
             Stipends, dual-state filing, tax home rules — calculated in 60 seconds. Free.
           </p>
           <div className="flex flex-wrap justify-center gap-3 pt-2">
@@ -192,7 +193,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/quiz/tax-home"
-              className="bg-surface-raised border border-white/15 text-foreground font-medium px-6 py-3 rounded-lg hover:bg-white/10 transition-colors text-sm"
+              className="bg-transparent border border-white/60 text-white font-medium px-6 py-3 rounded-lg hover:bg-white/10 hover:border-white transition-colors text-sm"
             >
               Check my tax home
             </Link>
@@ -216,23 +217,45 @@ export default function HomePage() {
         {/* Tool Cards — with SVG illustrations */}
         <section id="tools" aria-labelledby="tools-heading">
           <h2 id="tools-heading" className="sr-only">Available calculators</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {TOOLS.map((tool) => (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                className="group bg-surface-raised rounded-xl border border-white/10 p-6 hover:border-teal/40 transition-colors space-y-3"
-              >
-                {tool.icon}
-                <h3 className="font-semibold text-foreground group-hover:text-teal transition-colors">
-                  {tool.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{tool.description}</p>
-                <span className="text-sm text-teal font-medium inline-flex items-center gap-1">
-                  {tool.cta} &rarr;
-                </span>
-              </Link>
-            ))}
+          <div className="space-y-4">
+            {/* First row: 3 cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {TOOLS.slice(0, 3).map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="group bg-surface-raised rounded-xl border border-white/10 p-6 hover:border-teal/40 transition-colors space-y-3"
+                >
+                  {tool.icon}
+                  <h3 className="font-semibold text-foreground group-hover:text-teal transition-colors">
+                    {tool.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{tool.description}</p>
+                  <span className="text-sm text-teal font-medium inline-flex items-center gap-1">
+                    {tool.cta} &rarr;
+                  </span>
+                </Link>
+              ))}
+            </div>
+            {/* Second row: 2 cards centered */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:max-w-[calc(66.67%-0.33rem)] mx-auto">
+              {TOOLS.slice(3).map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="group bg-surface-raised rounded-xl border border-white/10 p-6 hover:border-teal/40 transition-colors space-y-3"
+                >
+                  {tool.icon}
+                  <h3 className="font-semibold text-foreground group-hover:text-teal transition-colors">
+                    {tool.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{tool.description}</p>
+                  <span className="text-sm text-teal font-medium inline-flex items-center gap-1">
+                    {tool.cta} &rarr;
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -247,26 +270,31 @@ export default function HomePage() {
                 quote: "Finally figured out why my stipends were taxed. The quiz caught that I hadn't been working PRN shifts at home — easy fix.",
                 name: 'Kaitlyn R.',
                 role: 'ICU RN, 3 years traveling',
+                date: 'March 2026',
               },
               {
                 quote: "Compared two contracts side-by-side and realized the higher-paying one actually left me $400/month less after taxes.",
                 name: 'Marcus T.',
                 role: 'ER RN, California & Texas',
+                date: 'January 2026',
               },
               {
                 quote: "Used the per diem checker to push back on my agency's housing stipend. Got an extra $200/week.",
                 name: 'Diane L.',
                 role: 'NICU RN, 5 years traveling',
+                date: 'February 2026',
               },
             ].map((t) => (
               <blockquote
                 key={t.name}
                 className="bg-surface-raised rounded-xl border border-white/10 p-5 text-left space-y-3"
               >
+                <p className="text-amber text-sm" aria-label="5 out of 5 stars">★★★★★</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
                 <footer>
                   <p className="text-xs font-semibold text-foreground">{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.role}</p>
+                  <p className="text-xs text-muted-foreground/60 mt-0.5">{t.date}</p>
                 </footer>
               </blockquote>
             ))}
@@ -333,19 +361,12 @@ export default function HomePage() {
           <h2 id="faq-heading" className="text-xl font-bold text-foreground">
             Common questions
           </h2>
-          <div className="space-y-4">
-            {FAQ_ITEMS.map((item) => (
-              <div
-                key={item.name}
-                className="bg-surface-raised rounded-lg border border-white/10 p-5 space-y-2"
-              >
-                <h3 className="text-sm font-semibold text-foreground">{item.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.acceptedAnswer.text}
-                </p>
-              </div>
-            ))}
-          </div>
+          <FaqAccordion
+            items={FAQ_ITEMS.map((item) => ({
+              question: item.name,
+              answer: item.acceptedAnswer.text,
+            }))}
+          />
         </section>
 
         {/* Photo attribution */}

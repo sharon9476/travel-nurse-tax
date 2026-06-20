@@ -77,7 +77,7 @@ export default function ContractForm({ onSubmit, initialValues }: ContractFormPr
         {/* Taxable Hourly Rate */}
         <div className="space-y-1">
           <label htmlFor="taxableHourlyRate" className="block text-sm font-medium text-foreground">
-            Taxable Hourly Rate ($)
+            Taxable Hourly Rate ($) <span className="text-destructive" aria-hidden="true">*</span>
           </label>
           <input
             id="taxableHourlyRate"
@@ -96,7 +96,7 @@ export default function ContractForm({ onSubmit, initialValues }: ContractFormPr
         {/* Hours Per Week */}
         <div className="space-y-1">
           <label htmlFor="hoursPerWeek" className="block text-sm font-medium text-foreground">
-            Hours Per Week
+            Hours Per Week <span className="text-destructive" aria-hidden="true">*</span>
           </label>
           <input
             id="hoursPerWeek"
@@ -114,7 +114,7 @@ export default function ContractForm({ onSubmit, initialValues }: ContractFormPr
         {/* Housing Stipend */}
         <div className="space-y-1">
           <label htmlFor="housingStipendWeekly" className="block text-sm font-medium text-foreground">
-            Housing Stipend (per week, $)
+            Housing Stipend (per week, $) <span className="text-destructive" aria-hidden="true">*</span>
           </label>
           <input
             id="housingStipendWeekly"
@@ -132,7 +132,7 @@ export default function ContractForm({ onSubmit, initialValues }: ContractFormPr
         {/* M&IE Stipend */}
         <div className="space-y-1">
           <label htmlFor="mealsStipendWeekly" className="block text-sm font-medium text-foreground">
-            M&amp;IE Stipend (per week, $)
+            M&amp;IE Stipend (per week, $) <span className="text-destructive" aria-hidden="true">*</span>
           </label>
           <input
             id="mealsStipendWeekly"
@@ -200,7 +200,7 @@ export default function ContractForm({ onSubmit, initialValues }: ContractFormPr
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1">
           <label htmlFor="homeState" className="block text-sm font-medium text-foreground">
-            Home State
+            Home State <span className="text-destructive" aria-hidden="true">*</span>
           </label>
           <select
             id="homeState"
@@ -218,7 +218,7 @@ export default function ContractForm({ onSubmit, initialValues }: ContractFormPr
 
         <div className="space-y-1">
           <label htmlFor="assignmentState" className="block text-sm font-medium text-foreground">
-            Assignment State
+            Assignment State <span className="text-destructive" aria-hidden="true">*</span>
           </label>
           <select
             id="assignmentState"
