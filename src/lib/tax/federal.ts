@@ -4,7 +4,7 @@ export const TAX_YEAR = 2025
 
 export const FICA = {
   socialSecurityRate: 0.062,
-  socialSecurityWageBase: 176_100,
+  socialSecurityWageBase: 184_500,
   medicareRate: 0.0145,
   additionalMedicareRate: 0.009,
   additionalMedicareThreshold: { single: 200_000, married_jointly: 250_000, head_of_household: 200_000 } as Record<FilingStatus, number>,

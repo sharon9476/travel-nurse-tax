@@ -57,7 +57,7 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
   CO: {
     name: 'Colorado',
     hasIncomeTax: true,
-    flatRate: 0.044,
+    flatRate: 0.04,
   },
   CT: {
     name: 'Connecticut',
@@ -255,7 +255,7 @@ export const STATE_TAX_RATES: Record<string, StateTaxConfig> = {
   NH: {
     name: 'New Hampshire',
     hasIncomeTax: false,
-    notes: 'No tax on wages; interest/dividend tax being phased out',
+    notes: 'No income tax',
   },
   NJ: {
     name: 'New Jersey',
