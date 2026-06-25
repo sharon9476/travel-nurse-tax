@@ -23,6 +23,14 @@ Multi-state filing: Travel nurses must generally file a non-resident return in e
 
 Sources: IRS Publication 463, Revenue Ruling 73-529, IRC §162(a)(2).
 
+## Guides
+
+- [The Travel Nurse 50-Mile Rule Myth](https://www.travelnursetax.app/blog/travel-nurse-50-mile-rule-myth): The IRS has no 50-mile rule. What actually makes stipends tax-free is a valid tax home, duplicated living expenses, and a genuine need to sleep away from home — not distance.
+- [The IRS One-Year Rule](https://www.travelnursetax.app/blog/travel-nurse-one-year-rule): Working in one metro area for more than 12 months makes the assignment indefinite, shifting your tax home and turning stipends taxable. Serial 13-week contracts in the same location aggregate (Rev. Rul. 93-86).
+- [The Blended Rate Trap](https://www.travelnursetax.app/blog/travel-nurse-blended-rate-trap): A blended rate is a marketing average. Overtime, 401(k), unemployment, and mortgage qualification all key off the lower taxable base rate, not the blended figure.
+- [No Tax on Overtime (OBBBA 2025–2028)](https://www.travelnursetax.app/blog/travel-nurse-no-tax-on-overtime): An above-the-line deduction of up to $12,500 ($25,000 joint) of qualified FLSA overtime premium for tax years 2025–2028, phasing out above $150,000/$300,000 MAGI. FICA still applies; only the premium "half" qualifies.
+- [Per Diem Clawbacks](https://www.travelnursetax.app/blog/travel-nurse-per-diem-missed-shifts): Tax-free per diem is tied to days actually worked away from home, so missed shifts, call-offs, and travel days (M&IE paid at 75%) prorate the stipend. Proration is what keeps the payments tax-free.
+
 ## About
 
 TravelNurseTax is a free tool for US travel nurses. No signup required. No data stored.
