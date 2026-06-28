@@ -5,6 +5,33 @@ import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { COMPANY_SAME_AS, DEFAULT_AUTHOR, authorRefJsonLd } from '@/lib/author'
+
+const SITE_URL = 'https://www.travelnursetax.app'
+
+// Site-wide WebSite + Organization identity. Lives in the root layout so the "Who" (founder +
+// verifying profiles) is present on every page, not just the homepage.
+const SITE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: 'TravelNurseTax',
+      description: 'Free tax calculators built specifically for travel nurses.',
+      publisher: { '@id': `${SITE_URL}/#organization` },
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      url: `${SITE_URL}/`,
+      name: 'TravelNurseTax',
+      founder: authorRefJsonLd(DEFAULT_AUTHOR),
+      sameAs: COMPANY_SAME_AS,
+    },
+  ],
+}
 
 const inter = Inter({
   subsets: ['latin'],
@@ -61,6 +88,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
       <body className="min-h-screen bg-navy text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_SCHEMA) }}
+        />
         <TooltipProvider>
           <SiteHeader />
           <main>{children}</main>

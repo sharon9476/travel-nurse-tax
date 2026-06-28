@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { STATE_TAX_RATES } from '@/lib/tax/states'
+import { AUTHORS } from '@/lib/author'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://www.travelnursetax.app'
@@ -9,6 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: 'yearly',
     priority: 0.7,
+  }))
+
+  const authorPages: MetadataRoute.Sitemap = Object.keys(AUTHORS).map((slug) => ({
+    url: `${base}/authors/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.5,
   }))
 
   return [
@@ -72,6 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    ...authorPages,
     ...statePages,
   ]
 }

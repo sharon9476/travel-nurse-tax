@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { DEFAULT_AUTHOR, authorPath } from '@/lib/author'
 
 const TOOL_LINKS = [
   { href: '/calculator/contract-analyzer', label: 'Contract Analyzer' },
@@ -20,6 +21,15 @@ export default function SiteFooter() {
             <p className="font-semibold text-foreground">TravelNurseTax</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Free tax calculators built for how travel nursing actually works — stipends, dual-state filing, and tax home rules included.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Built and maintained by{' '}
+              <Link
+                href={authorPath(DEFAULT_AUTHOR.slug)}
+                className="text-foreground hover:text-teal transition-colors font-medium"
+              >
+                {DEFAULT_AUTHOR.name}
+              </Link>
             </p>
           </div>
 
@@ -77,7 +87,7 @@ export default function SiteFooter() {
           <p className="text-sm text-muted-foreground">
             &copy; {year} TravelNurseTax.app
           </p>
-          <p className="text-xs text-muted-foreground/60 max-w-2xl mx-auto">
+          <p className="text-xs text-muted-foreground max-w-2xl mx-auto">
             All calculations are estimates for informational purposes only and do not constitute tax advice.
             Consult a qualified tax professional before making financial decisions.
           </p>

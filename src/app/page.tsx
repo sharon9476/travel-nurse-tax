@@ -125,22 +125,11 @@ const FAQ_ITEMS = [
     },
   ]
 
+// WebSite + Organization identity is emitted site-wide from the root layout (src/app/layout.tsx).
+// The homepage adds the page-specific SoftwareApplication + FAQPage nodes, linked to the org by @id.
 const PAGE_SCHEMA = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'WebSite',
-      '@id': 'https://www.travelnursetax.app/#website',
-      url: 'https://www.travelnursetax.app/',
-      name: 'TravelNurseTax',
-      description: 'Free tax calculators built specifically for travel nurses.',
-    },
-    {
-      '@type': 'Organization',
-      '@id': 'https://www.travelnursetax.app/#organization',
-      url: 'https://www.travelnursetax.app/',
-      name: 'TravelNurseTax',
-    },
     {
       '@type': 'SoftwareApplication',
       name: 'TravelNurseTax',
@@ -148,6 +137,7 @@ const PAGE_SCHEMA = {
       operatingSystem: 'Any',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       url: 'https://www.travelnursetax.app/',
+      publisher: { '@id': 'https://www.travelnursetax.app/#organization' },
     },
     {
       '@type': 'FAQPage',
@@ -170,6 +160,7 @@ export default function HomePage() {
           src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1920&q=80"
           alt="Smiling female travel nurse in white coat"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
         />
@@ -294,7 +285,7 @@ export default function HomePage() {
                 <footer>
                   <p className="text-xs font-semibold text-foreground">{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.role}</p>
-                  <p className="text-xs text-muted-foreground/60 mt-0.5">{t.date}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{t.date}</p>
                 </footer>
               </blockquote>
             ))}
@@ -370,7 +361,7 @@ export default function HomePage() {
         </section>
 
         {/* Photo attribution */}
-        <p className="text-center text-xs text-muted-foreground/40">
+        <p className="text-center text-xs text-muted-foreground">
           Photos via{' '}
           <a
             href="https://unsplash.com"

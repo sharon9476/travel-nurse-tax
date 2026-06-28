@@ -11,6 +11,7 @@ export interface PostSummary {
 
 export interface Post extends PostSummary {
   body: PortableTextBlock[]
+  _updatedAt?: string
   seoTitle?: string
   seoDescription?: string
   relatedTool?: 'contract-analyzer' | 'tax-home-quiz' | 'per-diem-checker' | 'w2-vs-1099'
@@ -37,6 +38,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       title,
       slug,
       publishedAt,
+      _updatedAt,
       excerpt,
       body,
       seoTitle,

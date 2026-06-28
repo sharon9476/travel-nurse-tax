@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { DEFAULT_AUTHOR, authorPath } from '@/lib/author'
 
 export const metadata: Metadata = {
   title: 'About TravelNurseTax',
@@ -86,6 +87,37 @@ export default function AboutPage() {
           large, your tax home is unclear, or you are filing in three or more states, working with a
           travel nurse&ndash;specialist CPA will pay for itself quickly.
         </p>
+      </div>
+
+      {/* Who's behind this */}
+      <div className="space-y-4">
+        <h2 className="text-xl font-bold text-foreground">Who&apos;s behind this</h2>
+        <div className="flex items-start gap-5">
+          <div
+            aria-hidden="true"
+            className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-teal/15 border border-teal/30 text-lg font-bold text-teal data-mono"
+          >
+            SB
+          </div>
+          <div className="space-y-2">
+            <p className="text-muted-foreground leading-relaxed">
+              TravelNurseTax is built and maintained by{' '}
+              <Link
+                href={authorPath(DEFAULT_AUTHOR.slug)}
+                className="text-teal hover:opacity-80 transition-opacity font-medium"
+              >
+                {DEFAULT_AUTHOR.name}
+              </Link>
+              , its founder. {DEFAULT_AUTHOR.bio.replace(/^Sharon Ben-Moshe is the founder of TravelNurseTax\. /, '')}
+            </p>
+            <Link
+              href={authorPath(DEFAULT_AUTHOR.slug)}
+              className="text-sm text-teal hover:opacity-80 transition-opacity font-medium inline-flex items-center gap-1"
+            >
+              More about {DEFAULT_AUTHOR.name.split(' ')[0]} &rarr;
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* Contact */}

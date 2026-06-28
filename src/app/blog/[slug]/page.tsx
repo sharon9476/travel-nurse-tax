@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { PortableText, type PortableTextBlock } from '@portabletext/react'
 import { getAllPostSlugs, getPostBySlug } from '@/lib/sanity/queries'
+import { DEFAULT_AUTHOR, authorPath, authorUrl, authorRefJsonLd } from '@/lib/author'
+
+const SITE_URL = 'https://www.travelnursetax.app'
 
 export const revalidate = 3600
 
@@ -22,6 +25,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: post.seoTitle ?? post.title,
     description: post.seoDescription ?? post.excerpt,
+    authors: [{ name: DEFAULT_AUTHOR.name, url: authorUrl(DEFAULT_AUTHOR.slug) }],
+    alternates: { canonical: `/blog/${slug}` },
   }
 }
 
@@ -55,8 +60,33 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const relatedTool = post.relatedTool ? RELATED_TOOL_CONFIG[post.relatedTool] : null
 
+  const fmtDate = (iso: string) =>
+    new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+
+  const publishedDate = fmtDate(post.publishedAt)
+  // Show an "Updated" date only when the post was genuinely edited after publishing.
+  const wasUpdated =
+    !!post._updatedAt && new Date(post._updatedAt).getTime() - new Date(post.publishedAt).getTime() > 86_400_000
+  const updatedDate = wasUpdated ? fmtDate(post._updatedAt!) : null
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.seoDescription ?? post.excerpt,
+    datePublished: post.publishedAt,
+    dateModified: post._updatedAt ?? post.publishedAt,
+    author: authorRefJsonLd(DEFAULT_AUTHOR),
+    publisher: { '@type': 'Organization', name: 'TravelNurseTax', url: SITE_URL },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/${post.slug.current}` },
+  }
+
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <header className="space-y-3">
         <Link
           href="/blog"
@@ -68,11 +98,15 @@ export default async function BlogPostPage({ params }: PageProps) {
           {post.title}
         </h1>
         <p className="text-xs text-muted-foreground">
-          {new Date(post.publishedAt).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}
+          By{' '}
+          <Link
+            href={authorPath(DEFAULT_AUTHOR.slug)}
+            className="text-teal hover:opacity-80 transition-opacity font-medium"
+          >
+            {DEFAULT_AUTHOR.name}
+          </Link>{' '}
+          · {publishedDate}
+          {updatedDate && <span className="text-muted-foreground/70"> · Updated {updatedDate}</span>}
         </p>
       </header>
 

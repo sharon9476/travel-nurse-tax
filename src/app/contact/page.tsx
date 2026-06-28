@@ -82,7 +82,7 @@ export default function ContactPage() {
       </div>
 
       {/* Footer note */}
-      <p className="text-xs text-muted-foreground/60 leading-relaxed">
+      <p className="text-xs text-muted-foreground leading-relaxed">
         TravelNurseTax does not provide legal, financial, or tax advice. All tool outputs are
         estimates for planning purposes only. See our{' '}
         <Link href="/terms" className="underline hover:text-muted-foreground transition-colors">Terms of Service</Link>
